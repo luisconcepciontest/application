@@ -27,11 +27,13 @@ RUN apk add --no-cache \
     nodejs npm \
     python \
     vim
-    
+
 RUN adduser --system app --home /app
 USER app
-WORKDIR /app
-RUN git clone https://github.com/timeoff-management/application.git timeoff-management
+RUN mkdir /app/timeoff-management
+COPY . /app/timeoff-management
+#WORKDIR /app
+#RUN git clone https://github.com/luisconcepciontest/application.git timeoff-management
 WORKDIR /app/timeoff-management
 
 RUN npm install
