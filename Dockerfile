@@ -32,8 +32,6 @@ RUN adduser --system app --home /app
 USER app
 RUN mkdir /app/timeoff-management
 COPY . /app/timeoff-management
-#WORKDIR /app
-#RUN git clone https://github.com/luisconcepciontest/application.git timeoff-management
 WORKDIR /app/timeoff-management
 
 RUN npm install
