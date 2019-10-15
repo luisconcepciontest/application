@@ -1,36 +1,36 @@
 kind: Service
 apiVersion: v1
 metadata:
-  name: timeoff-management-gorilla
+  name: timeoff-management-gorilla-dev
 spec:
   type: NodePort
   selector:
-    app: timeoff-management-gorilla
+    app: timeoff-management-gorilla-dev
   ports:
   - protocol: TCP
-    port: 3000
-    nodePort: 3000
+    port: 3001
+    nodePort: 3001
 
 ---
 
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: timeoff-management-gorilla
+  name: timeoff-management-gorilla-dev
   labels:
-    app: timeoff-management-gorilla
+    app: timeoff-management-gorilla-dev
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: timeoff-management-gorilla
+      app: timeoff-management-gorilla-dev
   template:
     metadata:
       labels:
-        app: timeoff-management-gorilla
+        app: timeoff-management-gorilla-dev
     spec:
       containers:
-      - name: timeoff-management-gorilla
+      - name: timeoff-management-gorilla-dev
         image: $DOCKER_IMAGE_NAME:$BUILD_NUMBER
         ports:
-        - containerPort: 3000
+        - containerPort: 3001

@@ -2,7 +2,7 @@ pipeline {
     agent any
     environment {
         //be sure to replace "luisconcepciontest" with your own Docker Hub username | test webhooks2
-        DOCKER_IMAGE_NAME = "luisconcepciontest/timeoff-management-gorilla"
+        DOCKER_IMAGE_NAME = "luisconcepciontest/timeoff-management-gorilla-dev"
     }
     stages {
 
@@ -39,7 +39,7 @@ pipeline {
             steps {
                 kubernetesDeploy(
                     kubeconfigId: 'kubeconfig',
-                    configs: 'timeoff-management-gorilla.yml',
+                    configs: 'timeoff-management-gorilla-dev.yml',
                     enableConfigSubstitution: true
                 )
             }
