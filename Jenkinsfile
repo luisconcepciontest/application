@@ -32,7 +32,7 @@ pipeline {
                 }
             }
         }
-        stage('DeployToProduction') {
+        stage('DeployToDev') {
             when {
                 branch 'dev'
             }
