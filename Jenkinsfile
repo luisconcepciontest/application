@@ -1,7 +1,7 @@
 pipeline {
     agent any
     environment {
-        //be sure to replace "luisconcepciontest" with your own Docker Hub username | test webhooks2
+        //be sure to replace "luisconcepciontest" with your own Docker Hub username | test webhooks3
         DOCKER_IMAGE_NAME = "luisconcepciontest/timeoff-management-gorilla-dev"
     }
     stages {
