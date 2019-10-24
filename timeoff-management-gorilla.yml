@@ -24,12 +24,10 @@ spec:
   selector:
     matchLabels:
       app: timeoff-management-gorilla
-      track: stable
   template:
     metadata:
       labels:
         app: timeoff-management-gorilla
-        track: stable
     spec:
       containers:
       - name: timeoff-management-gorilla
